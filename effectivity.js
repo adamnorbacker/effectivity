@@ -99,7 +99,3 @@ function show(s){
 		return false;
 	} 
 }
-
-function click(s){
-isClassOrId(s).onclick
-}
