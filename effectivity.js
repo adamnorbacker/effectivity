@@ -4,8 +4,9 @@ var d = document;
 class effectivity {
 //Click handler
   static click(s, s1) {
-  isClassOrId(s).addEventListener("click", () => {
-    s1();
+  if(isClassOrId(s) !== false)
+  isClassOrId(s).addEventListener("click", function(_this) {
+    s1(this);
   });
   }
  
@@ -17,47 +18,25 @@ class effectivity {
 
 //Get Query String
 static getQueryString(qs){
-	var fQ = new RegExp('[?&]' + qs).test(location.search);
-	return fQ;
+	return new RegExp('[?&]' + qs).test(location.search);
 }
-	//Get current height of element
+//Get current height of element
 static getHeight(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).offsetHeight;
-	} else {
-		console.error("No selector found to calculate height");
-		return false;
-	}
-	
+	return isClassOrId(s).offsetHeight;
 }
 
 //Get current width of element
 static getWidth(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).offsetWidth;
-	} else {
-		console.error("No selector found to calculate width");
-		return false;
-	}
+	return isClassOrId(s).offsetWidth;
 }
-	//Hide element
+//Hide element
 static hide(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).style.display = "none";
-	} else {
-		console.error("No selector found to hide");
-		return false;
-	} 
+	isClassOrId(s).style.display = "none";
 }
 
 //show element
 static show(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).style.display = "block";
-	} else {
-		console.error("No selector found to show");
-		return false;
-	} 
+	isClassOrId(s).style.display = "block";
 }
 }
 
@@ -66,16 +45,16 @@ function getId(id){
 	return d.getElementById(id);
 }
 
-//getClassTag function
-function getClassTag(c){
-	return d.querySelector(c);
+//getClass function
+function getClass(c){
+	return d.querySelector('.'+c);
 }
 
 function isClassOrId(s){
 	if(!isEmpty(getId(s))){
 		return getId(s);
-	} else if(!isEmpty(getClassTag(s))){
-		return getClassTag(s);
+	} else if(!isEmpty(getClass(s))){
+		return getClass(s);
 	} else {
 		console.error("No selector found");
 		return false;
@@ -83,7 +62,7 @@ function isClassOrId(s){
 }
 
 //Check if variable is empty.
-function isEmpty (v){
+function isEmpty(v){
 	var k;
 	if (v === "" || v === 0 || v === "0" || v === null || v === false || v === undefined ) {
 	 return true;
@@ -95,4 +74,4 @@ function isEmpty (v){
 	 return true;
 	}
 	return false;
-   }
+}
