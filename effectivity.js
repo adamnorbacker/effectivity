@@ -66,16 +66,16 @@ function getId(id){
 	return d.getElementById(id);
 }
 
-//getClass function
-function getClass(c){
-	return d.getElementsByClassName(c)[0];
+//getClassTag function
+function getClassTag(c){
+	return d.querySelector(c);
 }
 
 function isClassOrId(s){
 	if(!isEmpty(getId(s))){
 		return getId(s);
-	} else if(!isEmpty(getClass(s))){
-		return getClass(s);
+	} else if(!isEmpty(getClassTag(s))){
+		return getClassTag(s);
 	} else {
 		console.error("No selector found");
 		return false;
