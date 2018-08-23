@@ -68,7 +68,7 @@ function getId(id){
 
 //getClass function
 function getClass(c){
-	return d.getElementsByClassName(c);
+	return d.getElementsByClassName(c)[0];
 }
 
 function isClassOrId(s){
