@@ -1,6 +1,14 @@
 //Variable declarations
 var d = document;
 
+class effectivity {
+  static click(s, s1) {
+    isClassOrId(s).onclick = function() {
+      s1();
+    };
+  }
+}
+
 //getID function
 function getId(id){
 	return d.getElementById(id);
@@ -82,7 +90,7 @@ function hide(s){
     
 }
 
-//Hide element
+//show element
 function show(s){
 	if(isClassOrId(s) !== false){
 		isClassOrId(s).style.display = "block";
@@ -90,4 +98,8 @@ function show(s){
 		console.error("No selector found to show");
 		return false;
 	} 
+}
+
+function click(s){
+isClassOrId(s).onclick
 }
