@@ -74,7 +74,7 @@ function getClass(c){
 function isClassOrId(s){
 	if(!isEmpty(getId(s))){
 		return getId(s);
-	} elseif(!isEmpty(getClass(s))){
+	} else if(!isEmpty(getClass(s))){
 		return getClass(s);
 	} else {
 		console.error("No selector found");
