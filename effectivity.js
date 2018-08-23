@@ -4,9 +4,9 @@ var d = document;
 class effectivity {
 //Click handler
   static click(s, s1) {
-    isClassOrId(s).onclick = function() {
-      s1();
-    };
+  isClassOrId(s).addEventListener("click", () => {
+    s1();
+  });
   }
  
 //Validate if email  
