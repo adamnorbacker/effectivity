@@ -40,11 +40,11 @@ return fQ;
 }
 
 //Get current height of element
-function getHeight(selector){
-	if(!isEmpty(getId(selector))){
-	return getId(selector).offsetHeight;
-	} elseif(!isEmpty(getClass(selector))){
-	return getClass(selector).offsetHeight;
+function getHeight(s){
+	if(!isEmpty(getId(s))){
+	return getId(s).offsetHeight;
+	} elseif(!isEmpty(getClass(s))){
+	return getClass(s).offsetHeight;
 	} else {
 	console.error("No selector found to calculate height");
 	return false;
@@ -52,11 +52,11 @@ function getHeight(selector){
 }
 
 //Get current width of element
-function getWidth(selector){
-	if(!isEmpty(getId(selector))){
-	return getId(selector).offsetWidth;
-	} elseif(!isEmpty(getClass(selector))){
-	return getClass(selector).offsetWidth;
+function getWidth(s){
+	if(!isEmpty(getId(s))){
+	return getId(s).offsetWidth;
+	} elseif(!isEmpty(getClass(s))){
+	return getClass(s).offsetWidth;
 	} else {
 	console.error("No selector found to calculate width");
 	return false;
