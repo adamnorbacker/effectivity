@@ -7,18 +7,18 @@ function getId(id) {
 }
 
 //getClass function
-function getClass(class) {
-	return d.getElementsByClassName(class);
+function getClass(c) {
+	return d.getElementsByClassName(c);
 }
 
 //Check if variable is empty.
-function isEmpty (emptyvar) {
-	var key;
-	if (emptyvar === "" || emptyvar === 0 || emptyvar === "0" || emptyvar === null || emptyvar === false || emptyvar === undefined ) {
+function isEmpty (v) {
+	var k;
+	if (v === "" || v === 0 || v === "0" || v === null || v === false || v === undefined ) {
 	 return true;
 	}
-	if (typeof emptyvar == 'object') {
-	 for (key in emptyvar) {
+	if (typeof v == 'object') {
+	 for (k in v) {
 	  return false;
 	 }
 	 return true;
@@ -34,7 +34,7 @@ function isEmpty (emptyvar) {
 }
 
 //Get Query String
-function getQueryString(queryString){
-var findQuery = new RegExp('[?&]' + queryString).test(location.search);
-return findQuery;
+function getQueryString(qs){
+var fQ = new RegExp('[?&]' + qs).test(location.search);
+return fQ;
 }
