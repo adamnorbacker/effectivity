@@ -2,11 +2,63 @@
 var d = document;
 
 class effectivity {
+//Click handler
   static click(s, s1) {
     isClassOrId(s).onclick = function() {
       s1();
     };
   }
+ 
+//Validate if email  
+ static validateEmail(email){
+	var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	return re.test(String(email).toLowerCase());
+}
+
+//Get Query String
+static getQueryString(qs){
+	var fQ = new RegExp('[?&]' + qs).test(location.search);
+	return fQ;
+}
+	//Get current height of element
+static getHeight(s){
+	if(isClassOrId(s) !== false){
+		isClassOrId(s).offsetHeight;
+	} else {
+		console.error("No selector found to calculate height");
+		return false;
+	}
+	
+}
+
+//Get current width of element
+static getWidth(s){
+	if(isClassOrId(s) !== false){
+		isClassOrId(s).offsetWidth;
+	} else {
+		console.error("No selector found to calculate width");
+		return false;
+	}
+}
+	//Hide element
+static hide(s){
+	if(isClassOrId(s) !== false){
+		isClassOrId(s).style.display = "none";
+	} else {
+		console.error("No selector found to hide");
+		return false;
+	} 
+}
+
+//show element
+static show(s){
+	if(isClassOrId(s) !== false){
+		isClassOrId(s).style.display = "block";
+	} else {
+		console.error("No selector found to show");
+		return false;
+	} 
+}
 }
 
 //getID function
@@ -44,58 +96,3 @@ function isEmpty (v){
 	}
 	return false;
    }
-   
-   
- //Validate if email  
- function validateEmail(email){
-	var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-	return re.test(String(email).toLowerCase());
-}
-
-//Get Query String
-function getQueryString(qs){
-	var fQ = new RegExp('[?&]' + qs).test(location.search);
-	return fQ;
-}
-
-//Get current height of element
-function getHeight(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).offsetHeight;
-	} else {
-		console.error("No selector found to calculate height");
-		return false;
-	}
-	
-}
-
-//Get current width of element
-function getWidth(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).offsetWidth;
-	} else {
-		console.error("No selector found to calculate width");
-		return false;
-	}
-}
-
-//Hide element
-function hide(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).style.display = "none";
-	} else {
-		console.error("No selector found to hide");
-		return false;
-	}
-    
-}
-
-//show element
-function show(s){
-	if(isClassOrId(s) !== false){
-		isClassOrId(s).style.display = "block";
-	} else {
-		console.error("No selector found to show");
-		return false;
-	} 
-}
