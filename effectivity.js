@@ -38,3 +38,27 @@ function getQueryString(qs){
 var fQ = new RegExp('[?&]' + qs).test(location.search);
 return fQ;
 }
+
+//Get current height of element
+function getHeight(selector){
+	if(!isEmpty(getId(selector))){
+	return getId(selector).offsetHeight;
+	} elseif(!isEmpty(getClass(selector))){
+	return getClass(selector).offsetHeight;
+	} else {
+	console.error("No selector found to calculate height");
+	return false;
+	}
+}
+
+//Get current width of element
+function getWidth(selector){
+	if(!isEmpty(getId(selector))){
+	return getId(selector).offsetWidth;
+	} elseif(!isEmpty(getClass(selector))){
+	return getClass(selector).offsetWidth;
+	} else {
+	console.error("No selector found to calculate width");
+	return false;
+	}
+}
