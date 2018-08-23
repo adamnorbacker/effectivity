@@ -35,8 +35,8 @@ function isEmpty (v) {
 
 //Get Query String
 function getQueryString(qs){
-var fQ = new RegExp('[?&]' + qs).test(location.search);
-return fQ;
+	var fQ = new RegExp('[?&]' + qs).test(location.search);
+	return fQ;
 }
 
 //Get current height of element
