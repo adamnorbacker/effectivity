@@ -56,7 +56,7 @@ function isClassOrId(s){
 	} else if(!isEmpty(getClass(s))){
 		return getClass(s);
 	} else {
-		console.error("No selector found");
+		// console.error("No selector found");
 		return false;
 	}
 }
