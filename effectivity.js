@@ -53,10 +53,10 @@ function getClass(c){
 function isClassOrId(s){
 	if(!isEmpty(getId(s))){
 		return getId(s);
-	} else if(!isEmpty(getClass(s))){
+	} else if(!isEmpty(getClass(s))){//isEmpty is not working correctly here
 		return getClass(s);
 	} else {
-		// console.error("No selector found");
+		console.error("No selector found");
 		return false;
 	}
 }
